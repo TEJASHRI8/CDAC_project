@@ -1,0 +1,51 @@
+<nav class="navbar navbar-inverse" >
+    <div class="container">
+      
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a routerLink="/student-list">Applicant's List</a></li>
+            <li><a routerLink="/add-scheme">Add new Scheme</a></li>
+            <li><a routerLink="/bank-scheme">Bank Schemes</a></li>
+         
+             <li><a routerLink="/help">help</a></li>
+          
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><button (click)="onLogout()" style="margin-top: 10px;" class="btn btn-link">Logout</button></li>
+          </ul>
+
+        </div>
+    </div>
+  </nav>
+
+
+<h1 style="text-align: center">Add New Scheme</h1>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="">Scheme Name</label>
+      <input [(ngModel)]="schemeName" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Description</label>
+      <input [(ngModel)]="description" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">By Region</label>
+      <input [(ngModel)]="region" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">By amount</label>
+      <input [(ngModel)]="amount" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">By Course Type</label>
+      <input [(ngModel)]="courseType" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <button (click)="addnewScheme()" class="btn btn-success">Add New Scheme</button>
+    </div>
+  </div>
+</div>

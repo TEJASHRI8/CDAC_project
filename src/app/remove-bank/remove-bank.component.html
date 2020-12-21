@@ -1,0 +1,74 @@
+<div></div>
+<nav class="navbar navbar-inverse" style="width: 110%">
+  <div class="container">
+    
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+         
+            <li><a routerLink="/add-bank">Add Bank</a></li>
+            <li><a routerLink="/added-banks">List of Added Banks</a></li>
+           <li><a routerLink="/remove-bank">Remove Bank</a></li>
+           </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><button (click)="onLogout()" style="margin-top: 10px;" class="btn btn-link">Logout</button></li>
+        </ul>
+      </div>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<body>
+
+  
+
+    <div class="container" style="background-image:url('./assets/b5.jpg');height:100%;width: 100%;background-repeat: no-repeat">
+          
+
+    
+
+<table class="table table-bordered table-hover">
+   
+    <thead>
+      <tr>
+        <th scope="col">Bank Id</th>
+        <th scope="col">Bank Name</th>
+        <th scope="col">Branch Name</th>
+        <th scope="col">IFSC Code</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact</th>
+        <!-- <th scope="col">Password</th> -->
+        <th scope="col">Role</th>
+        <th scope="col">Action</th>
+        
+       
+    </tr>
+   
+    </thead>
+    <tbody>
+      <tr *ngFor="let bank of Bank">
+        <td>{{bank.bankId}}</td>
+        <td>{{bank.bankName}}</td>
+        <td>{{bank.branch}}</td>
+        <td>{{bank.ifscCode}}</td>
+        <td>{{bank.email}}</td>
+        <td>{{bank.contact}}</td>
+        <!-- <td>{{bank.password}}</td> -->
+        <td>{{bank.role}}</td>
+        <td>
+          <button type="button" (click)="removeBank(bank.bankId)" class="btn btn-large btn-block btn-success" name="bank"  value="bank">Remove </button>
+          </td>
+       </tr>                 
+            
+       
+        
+    </tbody>
+</table>
+
+</div>
+</body>
+
+
+
+

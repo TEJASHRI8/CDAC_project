@@ -1,0 +1,159 @@
+<nav class="navbar navbar-inverse" role="navigation" >
+    <ul class="nav navbar-nav">
+        <li>
+        
+    </li>  
+    <li class="active">
+            <a routerLink="/loanform">Loan Application Form</a>
+        </li>
+        <li>
+                <a routerLink="/bank-list">Search banks & Apply for Loan</a>
+            </li>
+    
+            <li>
+                <a routerLink="/app-status">Application Status</a>
+            </li>  
+
+        <ul class="nav navbar-nav navbar-right">
+        <li><button (click)="onLogout()" style="margin-top: 8px;" class="btn btn-link">Logout</button></li>
+        </ul>
+        <li>
+            <a routerLink="/chenge-password">Change password</a>
+        </li> 
+    </ul>
+    </nav>
+ <hr>
+<router-outlet></router-outlet>
+
+
+<div class="container" style="background-image:url('./assets/b5.jpg');height:100%;width: 100%;background-repeat: no-repeat">
+          
+
+
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    
+        <form #loanForm="ngForm" (ngSubmit)="SubmitLoanForm(loanForm)">
+            <fieldset>
+            <div style="text-align: center">
+               <legend>Application for Loan</legend>
+            </div>
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input disabled type="text" class="form-control" id="fname" name="fname" [(ngModel)]="student.fname" >
+                <label for="mname">Middle Name</label>
+                <input  type="text" class="form-control" id="mname" name="mname" [(ngModel)]="student.mname" >
+                <label for="lname">Last Name</label>
+                <input disabled type="text" class="form-control" id="lname" name="lname" [(ngModel)]="student.lname" >
+            </div>   
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input disabled type="text" class="form-control" id="email"  name="email" [(ngModel)]="student.email" >
+            </div>
+            
+            <div class="form-group">
+               <label for="Mobile">Mobile</label>
+               <input disabled type="text" class="form-control" id="mobile"  name="mobile" [(ngModel)]="student.mobile" >
+        
+            </div> 
+        
+            <div class="form-group">
+                 <label for="DOB">Date of Birth</label>
+                <input  type="date" class="form-control" id="birthdate"  name="birthdate"  [(ngModel)]="student.birthdate" >
+           </div> 
+
+           
+                <label for="gender">Gender</label>
+                <br>
+                Female<input  type="radio" class="form-control" id="gender"  name="gender" checked  value="FEMALE" [(ngModel)]="student.gender">
+                Male<input  type="radio" class="form-control" id="gender"  name="gender"value="MALE" [(ngModel)]="student.gender" >
+      
+         
+
+           <div class="form-group">
+                <label for="maritalStatus">Marital Status</label>
+                <input [(ngModel)]="student.maritalStatus" type="text" class="form-control" id="maritalStatus"  name="maritalStatus">
+            </div>
+
+            <div class="form-group">
+                <label for="adharCard">Adhar Card </label>
+                <input [(ngModel)]="student.adharCard" type="text" class="form-control" id="adharCard"  name="adharCard" >
+            </div>
+
+            <div class="form-group">
+                <label for="fname">Father's Name </label>
+                <input [(ngModel)]="student.fatherName" type="text" class="form-control" id="fname"  name="fatherName" >
+            </div>
+
+            <div class="form-group">
+                <label for="occupation">Occupation </label>
+                <input [(ngModel)]="student.occupation" type="text" class="form-control" id="occupation"  name="occupation" >
+            </div>
+
+            <div class="form-group">
+                <label for="income">Annual Income </label>
+                <input [(ngModel)]="student.income" type="number" class="form-control" id="income"  name="income" >
+            </div>
+
+            <div class="form-group">
+                    <label for="address">Address </label>
+                    <input [(ngModel)]="student.addressLine" type="text" class="form-control" id="addressLine"  name="addressLine" >
+                    <label for="city">City </label>
+                    <input [(ngModel)]="student.city" type="text" class="form-control" id="city"  name="city" >
+                    <label for="district">District </label>
+                    <input [(ngModel)]="student.district" type="text" class="form-control" id="district"  name="district" >
+                    <label for="pinCode">Pin Code </label>
+                    <input [(ngModel)]="student.pinCode" type="text" class="form-control" id="pinCode"  name="pinCode" >
+            </div>
+
+            <div class="form-group">
+                    <label for="qualification">Qualification </label>
+                    <input [(ngModel)]="student.degreeName" type="text" class="form-control" placeholder="Enter Degree Name" id="degreeName"  name="degreeName" >
+                    <input [(ngModel)]="student.obtainedMarks" type="number" class="form-control" placeholder="Enter Obtained Marks" id="obtainedMarks"  name="obtainedMarks" >
+                    <input [(ngModel)]="student.totalMarks" type="number" class="form-control" placeholder="Enter total marks" id="totalMarks"  name="totalMarks" >
+                    <input [(ngModel)]="student.yearOfPassing" type="number" class="form-control" placeholder="Enter year of passing" id="yearOfPassing"  name="yearOfPassing" >
+            </div>
+
+            <div class="form-group">
+                    <label for="admittedCourse">Details of Admitted Course </label><br>
+                    <label for="instituteName">Institue Name </label>
+                    <input [(ngModel)]="student.instituteName" type="text" class="form-control" id="instituteName"  name="instituteName" >
+
+                    <label for="courseName">Course Name </label>
+                    <input [(ngModel)]="student.courseName" type="text" class="form-control" id="courseName"  name="courseName" >
+
+                    <label for="startDate">Start Date</label>
+                    <input [(ngModel)]="student.startDate" type="date" class="form-control" id="startDate"  name="startDate" >
+
+                    <label for="endDate">End Date </label>
+                    <input [(ngModel)]="student.endDate" type="date" class="form-control" id="endDate"  name="endDate" >
+
+                    <label for="ecity">City </label>
+                    <input [(ngModel)]="student.ecity" type="text" class="form-control" id="ecity"  name="ecity" >
+
+                    <label for="country">Country  </label>
+                    <input [(ngModel)]="student.Country" type="text" class="form-control" id="country"  name="country" >
+
+                    <label for="courseFees">Course Fees </label>
+                    <input [(ngModel)]="student.courseFees" type="number" class="form-control" id="courseFees"  name="courseFees" >
+
+                    <label for="loanRequired">Loan Amount Required</label>
+                    <input [(ngModel)]="student.loanRequired" type="number" class="form-control" id=" loanRequired "  name=" loanRequired " >
+
+                    <label for="totalExpenses">Total Expenses </label>
+                    <input [(ngModel)]="student.totalExpenses" type="number" class="form-control" id=" totalExpenses "  name=" totalExpenses " >
+
+                    <label for="installments">No of installments </label>
+                    <input [(ngModel)]="student.installments" type="number" class="form-control" id=" installments "  name=" installments " >
+             </div>
+            
+            </fieldset>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+             &nbsp;&nbsp;
+             <button type="submit" class="btn btn-danger">Cancel</button>
+         </form>
+        </div>
+    </div>
+    
+    

@@ -1,0 +1,88 @@
+
+    
+    
+        <nav class="navbar navbar-inverse" role="navigation" style="width: 100%" >
+                <ul class="nav navbar-nav">
+                    
+                     <li class="active">
+                        <a routerLink="/signup">Student Registration</a>
+                    </li>
+                    <li>
+                        <a routerLink="/student-login">Student Login</a>
+                    </li>
+                
+                    <li>
+                        <a routerLink="/bank-login">Bank/Admin Login</a>
+                    </li>
+            
+                </ul>
+                </nav>
+             <hr>
+            <router-outlet></router-outlet>
+           <div class="container" style="background-image:url('./assets/stud-login.jpg');height: 100%;width: 100%;background-repeat: no-repeat">
+               <!-- <img src="./assets/bank.jpeg"> -->
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <form #signupForm="ngForm" (ngSubmit)="SignUp(signupForm)" style="align-self: center">
+                   <div style="align-self: center">
+                    <legend style="color:black;text-size-adjust: 25"> Register Here</legend>
+                   </div>
+                    <!-- <div class="form-group">
+                        <label for="FName">First Name</label>
+                        <input ngModel type="text" class="form-control" id="fName" name="fName">
+                        <label for="MName">Middle Name</label>
+                        <input ngModel type="text" class="form-control" id="mName" name="mName">
+                        <label for="LName">Last Name</label>
+                        <input ngModel type="text" class="form-control" id="lName" name="lName">
+              
+                    </div> -->
+                     <div class="form-group">
+                       <label for="Fname">First Name</label>
+                       <input ngModel type="text" class="form-control" id="fName" name="fname">
+                       </div>
+       
+                       <div class="form-group">
+                       <label for="Mname">Middle Name</label>
+                       <input ngModel type="text" class="form-control" id="mName" name="mname">
+                   </div>
+       
+                       <div class="form-group">
+                       <label for="Lname">Last Name</label>
+                       <input ngModel type="text" class="form-control" id="lName" name="lname">
+             
+                   </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input ngModel type="text" class="form-control" id="email"  name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                           <label for="Mobile">Mobile</label>
+                           <input ngModel type="text" class="form-control" id="mobile"  name="mobile">
+                        </div> 
+                
+                    <div class="form-group">
+                       <label for="Password">Password</label>
+                       <input ngModel type="password" class="form-control" id="password"  name="password">
+                    </div> 
+       
+                    <div class="form-group">
+                       <label for="ConfirmPassword">Confirm Password</label>
+                       <input ngModel type="password" class="form-control" id="confirmPassword"  name="confirmPassword">
+                    </div> 
+                                
+                     <span class="label label-warning">{{message}}</span>
+                           
+                    <button type="submit" class="btn btn-primary">Signup</button>
+                    &nbsp;&nbsp;
+                           
+                    <span class="label label-warning">{{message}}</span>
+               
+       
+                    <button type="submit" (click)="GoBackHome()" class="btn btn-danger">Cancel</button>
+                </form>
+               </div>
+           
+           
+           
+           </div>
+   

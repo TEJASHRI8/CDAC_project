@@ -1,0 +1,87 @@
+<nav class="navbar navbar-inverse" role="navigation" >
+  <ul class="nav navbar-nav">
+      <li>
+      
+  </li>  
+  <li class="active">
+          <a routerLink="/loanform">Loan Application Form</a>
+      </li>
+      <li>
+              <a routerLink="/bank-list">Search banks & Apply for Loan</a>
+          </li>
+  
+          <li>
+              <a routerLink="/app-status">Application Status</a>
+          </li>  
+
+      <ul class="nav navbar-nav navbar-right">
+      <li><button (click)="onLogout()" style="margin-top: 8px;" class="btn btn-link">Logout</button></li>
+      </ul>
+      <li>
+          <a routerLink="/chenge-password">Change password</a>
+      </li> 
+     
+  </ul>
+  </nav>
+<hr>
+<router-outlet></router-outlet>
+
+
+
+<div class="container" style="background-image:url('./assets/b5.jpg');height:100%;width: 100%;background-repeat: no-repeat">
+   
+<!-- <body> -->
+
+  
+    <div class="container" style="background-image:url('./assets/b5.jpg');height:100%;width: 100%;background-repeat: no-repeat">
+          
+
+  
+
+<table class="table table-bordered table-hover">
+   
+    <thead>
+      <tr>
+        <th scope="col">Bank Id</th>
+        <th scope="col">Bank Name</th>
+        <th scope="col">Branch Name</th>
+        <th scope="col">IFSC Code</th>
+        <th scope="col">Email</th>
+        <th scope="col">Cantact</th>
+        <!-- <th scope="col">Password</th> -->
+        <!-- <th scope="col">Role</th> -->
+        <th scope="col">Action</th>
+        
+       
+    </tr>
+   
+    </thead>
+    <tbody>
+      <tr *ngFor="let bank of Bank">
+        <td>{{bank.bankId}}</td>
+        <td>{{bank.bankName}}</td>
+        <td>{{bank.branch}}</td>
+        <td>{{bank.ifscCode}}</td>
+        <td>{{bank.email}}</td>
+        <td>{{bank.contact}}</td>
+      
+        <!-- <td>{{bank.password}}</td> -->
+        <!-- <td>{{bank.role}}</td> -->
+           
+
+        <td>
+          <button type="button" (click)="onApply(bank.bankId)" class="btn btn-large btn-block btn-success" name="bank"  value="bank">Apply</button>
+          </td>
+       </tr>                 
+            
+       
+        
+    </tbody>
+</table>
+
+</div>
+<!-- </body> -->
+
+</div>
+
+

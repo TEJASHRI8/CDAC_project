@@ -1,0 +1,92 @@
+<div>
+    <!-- <h1 style="align-content: center">Login</h1> -->
+    <nav class="navbar navbar-inverse" role="navigation" >
+      <ul class="nav navbar-nav">
+          <li>
+          
+      </li>  
+           <li class="active">
+              <a routerLink="/signup">Student Registration</a>
+          </li>
+          <li>
+              <a routerLink="/student-login">Student Login</a>
+          </li>
+      
+          <li>
+              <a routerLink="/bank-login">Bank/Admin Login</a>
+          </li>
+  
+      </ul>
+      </nav>
+   <hr>
+  <router-outlet></router-outlet>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="container" style="background-image:url('./assets/stud-login.jpg');height:100%;width: 100%;background-repeat: no-repeat">
+          
+
+    <div class="row">
+        <div style="background-image: url('./assets/bank.jpeg'); width: 100% ;mask-repeat: no-repeat">
+ 
+      <div class="col-md-3"></div>
+       <!-- <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Email</label>
+          <input [(ngModel)]="email" type="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Password</label>
+          <input [(ngModel)]="password" type="password" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="">Role</label>
+            <input [(ngModel)]="role" type="role" class="form-control">
+          </div>
+
+        <div class="form-group">
+            <button (click)="onLogin()" class="btn btn-success">Login</button>
+            <button (click)="onCancel()" class="btn btn-danger" style="margin-left: 10px;">Cancel</button>
+             
+        </div>
+      </div> -->
+     
+      
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+         
+    
+        <form #loginForm="ngForm" (ngSubmit)="SignIn(loginForm)">
+           <div style="text-align: center">
+       <legend>Login</legend>
+      </div>
+       <div class="form-group">
+           <label for="email">Email</label>
+           <input  type="text" class="form-control" id="email" name="email" placeholder="Enter Email" [(ngModel)]="email">
+       </div>
+   
+       <div class="form-group">
+           <label for="password">Password</label>
+           <input  type="password" class="form-control" id="password"  name="password" placeholder="Enter Password Here" [(ngModel)]="password">
+       </div>
+
+       <div class="form-group">
+        <label for="Role">Role</label>
+        <input  type="text" class="form-control" id="role"  name="role" placeholder="Enter Password Here" [(ngModel)]="role">
+       </div>
+   
+         <button type="submit" class="btn btn-primary">Login</button> &nbsp;&nbsp;&nbsp;
+         <button type="submit"(click)="cancel()" class="btn btn-danger">Cancel</button>
+        
+           <span class="label label-danger">{{message}}</span>
+        
+      
+        </form>
+    </div>
+    </div>
+    </div>
+  </div>

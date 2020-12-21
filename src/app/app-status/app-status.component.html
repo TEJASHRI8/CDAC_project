@@ -1,0 +1,67 @@
+<nav class="navbar navbar-inverse" role="navigation" >
+    <ul class="nav navbar-nav">
+        <li>
+        
+    </li>  
+    <li class="active">
+            <a routerLink="/loanform">Loan Application Form</a>
+        </li>
+        <li>
+                <a routerLink="/bank-list">Search banks & Apply for Loan</a>
+            </li>
+    
+            <li>
+                <a routerLink="/app-status">Application Status</a>
+            </li>  
+
+        <ul class="nav navbar-nav navbar-right">
+        <li><button (click)="onLogout()" style="margin-top: 8px;" class="btn btn-link">Logout</button></li>
+        </ul>
+        <li>
+            <a routerLink="/chenge-password">Change password</a>
+        </li> 
+    </ul>
+    </nav>
+ <hr>
+<router-outlet></router-outlet>
+
+<div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  <body>
+  
+    
+        
+    <div class="container" style="background-image:url('./assets/b5.jpg');height:100%;width: 100%;background-repeat: no-repeat">
+          
+
+  
+  
+  <table class="table table-bordered table-hover">
+     
+      <thead>
+        <tr>
+          <th scope="col">Application Id</th>
+        <th scope="col">Status of Application</th>
+          <th scope="col">Message from Bank</th>
+          
+         
+      </tr>
+     
+      </thead>
+      <tbody>
+        <tr >
+          <td>{{loanStatus.statusId}}</td>
+          <td>{{loanStatus.status}}</td>         
+          <td>{{loanStatus.message}}</td>         
+         </tr>                         
+      </tbody>
+  </table>
+  
+  </div>
+  </body>
+  
+  
+  
+  
+  

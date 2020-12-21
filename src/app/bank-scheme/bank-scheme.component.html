@@ -1,0 +1,53 @@
+<nav class="navbar navbar-inverse">
+    <div class="container">
+      
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a routerLink="/student-list">Applicant's List</a></li>
+            
+            <li><a routerLink="/add-scheme">Add new Scheme</a></li>
+             <li><a routerLink="/help">help</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><button (click)="onLogout()" style="margin-top: 10px;" class="btn btn-link">Logout</button></li>
+          </ul>
+        </div>
+    </div>
+  </nav>
+
+<div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+         
+        </div>
+      </div>
+      
+      
+      <div class="table-responsive">
+     
+        <table class="table table-bordered ">
+         
+          <tr>
+              <th scope="col">Scheme Id</th>
+              <th scope="col">Scheme Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Scheme Region</th>
+              <th scope="col">Scheme Amount</th>
+              <th scope="col">Scheme for Course</th>
+
+              </tr>
+          <tr *ngFor="let scheme of loanScheme">
+            <td>{{scheme.schemeId}}</td>
+            <td>{{scheme.schemeName}}</td>
+            <td>{{scheme.description}}</td>
+            <td>{{scheme.region}}</td>
+            <td>{{scheme.amount}}</td>
+            <td>{{scheme.courseType}}</td>
+            <td>
+                <input type="button" (click)="removeScheme(scheme)" name="remove">
+            </td>
+            
+          </tr>
+        </table>
+        
+      </div>

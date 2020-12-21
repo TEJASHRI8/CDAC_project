@@ -1,0 +1,97 @@
+<div></div>
+<nav class="navbar navbar-inverse" style="width: 110%">
+  <div class="container">
+    
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a routerLink="/student-list">Applicant's List</a></li>
+          <!-- <li><a routerLink="/add-scheme">Add new Scheme</a></li> -->
+           <!-- <li><a routerLink="/help">help</a></li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><button (click)="onLogout()" style="margin-top: 10px;" class="btn btn-link">Logout</button></li>
+        </ul>
+      </div>
+  </div>
+</nav>
+
+
+<div class="container" style="background-image:url('./assets/b5.jpg');height:100%;width: 100%;background-repeat: no-repeat">
+          
+
+    
+  <router-outlet></router-outlet>
+</div>
+<body>
+
+  
+    <div class="container" style="background-image:url('./assets/b5.jpg');height:100%;width: 100%;background-repeat: no-repeat">
+          
+
+  
+
+<table class="table table-bordered table-hover">
+   
+    <thead>
+        <tr>
+            <th> sid</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Degree Name</th>
+            <th>Passed Year</th>
+            <th>city</th>
+            <th>Institute Name</th>
+            <th>Course Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>City</th>
+            <th>Course Fees</th>
+            <th>Loan Required</th>
+            <th>Approve</th>
+            <th>Reject</th>
+            <!-- <th>Message</th> -->
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of studentlist" >
+                       
+            <td>{{s.sid}} </td>                                 
+            <td>{{s.fname}}</td>
+            <td>{{s.lname}}</td>
+            <td>{{s.email}}</td>
+            <td>{{s.mobile}}</td>
+            <td>{{s.qualification.degreeName}}</td>
+            <td>{{s.qualification.yearOfPassing}}</td>
+            <td>{{s.address.city}}</td>
+            <td>{{s.admittedCourse.instituteName}}</td>
+            <td>{{s.admittedCourse.courseName}}</td>
+            <td>{{s.admittedCourse.startDate}}</td>
+            <td>{{s.admittedCourse.endDate}}</td>
+            <td>{{s.admittedCourse.ecity}}</td>
+            <td>{{s.admittedCourse.courseFees}}</td>
+            <td>{{s.admittedCourse.loanRequired}}</td>
+            <td>
+            <button type="button" class="btn btn-large btn-block btn-success" name="approve" (click)="onSubmit(s.sid)" value="Approve">Approve</button>
+            </td>
+             <td>
+            <button type="button" class="btn btn-large btn-block btn-danger" name="reject" (click)="onReject(s.sid)" value="Reject">Reject</button>
+             </td> 
+             <!-- <td>
+                 <textarea name="message" id="message"></textarea>
+             </td> -->
+
+           
+        </tr>
+        
+    </tbody>
+</table>
+
+</div>
+</body>
+
+
+
+

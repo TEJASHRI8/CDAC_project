@@ -1,0 +1,110 @@
+<nav class="navbar navbar-inverse" role="navigation" >
+        <ul class="nav navbar-nav">
+            <li>
+            
+        </li>  
+        <li class="active">
+                <a routerLink="/loanform">Loan Application Form</a>
+            </li>
+            <li>
+                    <a routerLink="/apply-loan">Search bank schemes & Apply for Loan</a>
+                </li>
+        
+                <li>
+                    <a routerLink=" ">Application Status</a>
+                </li>  
+
+                <li>
+                        <a routerLink="/chenge-password">Change password</a>
+                    </li>
+            <ul class="nav navbar-nav navbar-right">
+            <li><button (click)="onLogout()" style="margin-top: 8px;" class="btn btn-link">Logout</button></li>
+            </ul>
+             
+        </ul>
+        </nav>
+     <hr>
+    <router-outlet></router-outlet>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Hello, {{fname}}!</h1>
+       
+    </div>
+
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Search loan Schemes</th>
+                    <th style="text-align: center">Search results</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>Search by region:</label>
+                        <div>
+                            <select name='region'>
+                                <option value="INDIA">INDIA</option>
+                                <option value="ABROAD">ABROAD</option>
+                            </select>
+                        </div>
+                        <label>Search by course:</label>
+                        <div>
+                            <select name='courseType'>
+                                <option value="UG">UG</option>
+                                <option value="PG">PG</option>
+                            </select>
+                        </div>
+                        <label>Search by amount:</label>
+                        <div>
+                            <select name='amount'>
+                                <option value="Below 4 lakhs">Below 4 lakhs</option>
+                                <option value="Between 4 to 7 lakhs">Between 4 to 7 lakhs</option>
+                                <option value="Above 7 lakhs">Above 7 lakhs</option>
+                            </select>
+                        </div>
+
+                    </td>
+                    <td>
+                            <div class="table-responsive table-bordered">
+                                    <table class="table">
+                                      <tr>
+                                        
+                                          <th scope="col">Bank Name</th>
+                                          <th scope="col">Scheme Name</th>
+                                          <th scope="col">IFSC Code</th>
+                                            <th scope="col">Action</th>
+                                         
+                                      </tr>
+                                      <tr *ngFor="let bank of Bank">
+                                        <td>{{bank.bankId}}</td>
+                                        <td>{{bank.bankName}}</td>
+                                        <td>{{bank.schemeName}}</td>
+                                        <td>{{bank.ifscCode}}</td>
+                                        <td>
+                                            <input type="button" (click)="onApply()" name="btn" >
+                                        </td>
+                                       </tr>
+                                    </table>
+                                    
+                                  </div>
+                    </td>
+                </tr>
+                <tr>
+                    
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+
+
+    
+</div>
+
+
+

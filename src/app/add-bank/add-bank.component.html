@@ -1,0 +1,63 @@
+<nav class="navbar navbar-inverse" style="width: 110%">
+  <div class="container">
+    
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+         
+            <li><a routerLink="/add-bank">Add Bank</a></li>
+            <li><a routerLink="/added-banks">List of Added Banks</a></li>
+           <li><a routerLink="/remove-bank">Remove Bank</a></li>
+           </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><button (click)="onLogout()" style="margin-top: 10px;" class="btn btn-link">Logout</button></li>
+        </ul>
+      </div>
+  </div>
+</nav>
+
+<div class="container" style="background-image:url('./assets/stud-login.jpg');height:100%;width: 100%;background-repeat: no-repeat">
+          
+
+  
+
+<h1 style="text-align: center">Add New Bank</h1>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <form #addBankForm="ngForm" (ngSubmit)="addNewBank(addBankForm)">
+       <div class="col-md-6">
+    <div class="form-group">
+      <label for="">Bank Name</label>
+      <input ngModel name="bankName" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Branch</label>
+      <input ngModel name="branch" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">IFSC code</label>
+      <input ngModel name="ifscCode" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Contact No:</label>
+      <input ngModel name="contact" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input ngModel name="email" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Password</label>
+      <input ngModel name="password" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Role</label>
+      <input ngModel name="role"  type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <button  class="btn btn-success">Add New Bank</button>
+    </div>
+  </div>
+  </form>
+</div>
+</div>
